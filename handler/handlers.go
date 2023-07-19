@@ -36,7 +36,7 @@ func CreateShortUrl(c *gin.Context) {
 		log.Fatal("DOMAIN must be set")
 	}
 
-	host := domain + ":" + port + "/"
+	host := domain + "/"
 	c.JSON(200, gin.H{
 		"message":   "short url created successfully",
 		"short_url": host + shortUrl,
