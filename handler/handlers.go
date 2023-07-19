@@ -2,11 +2,11 @@ package handler
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/udn/sosializi/store"
-	"github.com/udn/sosializi/urlshortener"
 	"log"
 	"net/http"
 	"os"
+	"sosializi/store"
+	"sosializi/urlshortener"
 )
 
 type UrlCreationRequest struct {

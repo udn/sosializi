@@ -21,8 +21,10 @@ type StorageService struct {
 
 func InitializeStore() *StorageService {
 	redisClient := redis.NewClient(&redis.Options{
-		Addr:     os.Getenv("REDIS_URL"),
-		DB:       0
+		Addr:     os.Getenv("REDIS_HOST"),
+		Username: os.Getenv("REDIS_USERNAME"),
+		Password: os.Getenv("REDIS_PASSWORD"),
+		DB:       0,
 	})
 
 	pong, err := redisClient.Ping(ctx).Result()

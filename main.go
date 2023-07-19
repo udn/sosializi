@@ -3,11 +3,11 @@ package main
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/udn/sosializi/handler"
-	"github.com/udn/sosializi/store"
 	"log"
 	"net/http"
 	"os"
+	"sosializi/handler"
+	"sosializi/store"
 )
 
 func main() {

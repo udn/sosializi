@@ -6,7 +6,6 @@ require (
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/itchyny/base58-go v0.2.1
-	github.com/udn/sosializi v0.0.0-20230719090726-12101f83e6b2
 )
 
 require (
