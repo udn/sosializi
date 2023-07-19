@@ -5,10 +5,18 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/udn/sosializi/handler"
 	"github.com/udn/sosializi/store"
+	"log"
 	"net/http"
+	"os"
 )
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+
 	r := gin.Default()
 	r.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
@@ -27,7 +35,7 @@ func main() {
 	// Note store initialization happens here
 	store.InitializeStore()
 
-	err := r.Run(":9808")
+	err := r.Run(":" + port)
 	if err != nil {
 		panic(fmt.Sprintf("Failed to start the web server - Error: %v", err))
 	}

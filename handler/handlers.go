@@ -4,7 +4,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/udn/sosializi/store"
 	"github.com/udn/sosializi/urlshortener"
+	"log"
 	"net/http"
+	"os"
 )
 
 type UrlCreationRequest struct {
@@ -22,7 +24,12 @@ func CreateShortUrl(c *gin.Context) {
 	shortUrl := urlshortener.GenerateShortLink(creationRequest.LongUrl, creationRequest.UserId)
 	store.SaveUrlMapping(shortUrl, creationRequest.LongUrl, creationRequest.UserId)
 
-	host := "http://localhost:9808/"
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+	host := "http://localhost:" + port
 	c.JSON(200, gin.H{
 		"message":   "short url created successfully",
 		"short_url": host + shortUrl,
