@@ -3,6 +3,7 @@ package urlshortener
 import (
 	"crypto/sha256"
 	"fmt"
+	"github.com/itchyny/base58-go"
 	"math/big"
 	"os"
 )
