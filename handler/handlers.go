@@ -29,7 +29,14 @@ func CreateShortUrl(c *gin.Context) {
 	if port == "" {
 		log.Fatal("$PORT must be set")
 	}
-	host := "http://localhost:" + port
+
+	domain := os.Getenv("DOMAIN")
+
+	if domain == "" {
+		log.Fatal("DOMAIN must be set")
+	}
+
+	host := domain + ":" + port + "/"
 	c.JSON(200, gin.H{
 		"message":   "short url created successfully",
 		"short_url": host + shortUrl,
