@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/go-redis/redis/v8"
+	"os"
 	"time"
 )
 
@@ -20,9 +21,8 @@ type StorageService struct {
 
 func InitializeStore() *StorageService {
 	redisClient := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
-		Password: "",
-		DB:       0,
+		Addr:     os.Getenv("REDIS_URL"),
+		DB:       0
 	})
 
 	pong, err := redisClient.Ping(ctx).Result()
