@@ -1,0 +1,26 @@
+en:
+  type: "English"
+  comments: "Comments "
+  loading: "Loading..."
+  description:
+    force_refrech: "Force Refresh of All Comments."
+    support_markdown: "Text supports Github Flavored Markdown."
+    delete_rule: "Comments older than 24 hours are deleted."
+    submit_rule: "Name is preserved. Text is reset, between submits."
+    see_action_cable: "To see Action Cable instantly update two browsers, open two browsers and submit a comment!"
+  form:
+    horizontal: "Horizontal Form"
+    stacked: "Stacked Form"
+    inline: "Inline Form"
+  input:
+    name:
+      label: "Name"
+      placeholder: "Your Name"
+    text:
+      label: "Text"
+      placeholder: "Say something using markdown..."
+    saving: "Saving"
+    post: "Post"
+  comment_was_successfully_created: "Comment was successfully created."
+  comment_was_successfully_updated: "Comment was successfully updated."
+  comment_was_successfully_destroyed: "Comment was successfully destroyed."
